@@ -1,0 +1,83 @@
+using System;
+
+namespace ConsoleApp21
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] mynum = new int [] { -7, 5, 0, 9, 98, 76,-8 };
+
+            Program p = new Program();
+            int min=p.findminimumnumber(mynum);
+            Console.WriteLine(min);         
+           int max= p.Findmaximumnumber(mynum);
+            Console.WriteLine(max);
+            int finsum=p.finSum(mynum);
+            Console.WriteLine(finsum);
+            int avg=p.finaverage(mynum);
+            Console.WriteLine(avg);
+
+
+        }
+        public int findminimumnumber(int[] mynum)
+        {
+
+
+            //   max = Array[0];
+            int lengthofarray = mynum.Length;
+
+            int min = mynum[0];
+            for(int i = 1; i < lengthofarray; i++ )
+            {
+                if (mynum[i]<min)
+                {
+                    min = mynum[i];
+                }
+            }
+            return min;
+        }
+        public int Findmaximumnumber(int[] mynum) 
+        
+        
+        {
+            int lengthofarray = mynum.Length;
+
+            int max = mynum[0];
+            for (int i = 1; i <lengthofarray; i++)
+            {
+                if (mynum[i] > max)
+                {
+                    max = mynum[i];
+                }
+
+            }
+                return max;
+        }
+    
+        public int finSum(int[] mynum
+            ) 
+        {
+            int sum = 0;
+          foreach(var i in mynum)
+            {
+                sum=sum+i;
+            }
+
+            return sum;
+        }
+        public int finaverage(int[] mynum)
+        {
+            int avg = 0;
+            int sum = 0;
+            foreach (var i in mynum)
+            {
+                sum = sum + i;
+            }
+            avg= sum/mynum.Length;
+
+            return avg;
+        }
+    }
+
+}
